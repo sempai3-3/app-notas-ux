@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aplicación accesible para crear y organizar notas.">
+    <title>Mis notas | UX/UI</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <main class="contenedor">
+        <header class="encabezado">
+            <p class="etiqueta">ORGANIZACIÓN PERSONAL</p>
+            <h1>Mis notas</h1>
+            <p class="descripcion">Guarda tus ideas y organiza tus pendientes.</p>
+        </header>
+
+        <section class="panel" aria-labelledby="titulo-formulario">
+            <h2 id="titulo-formulario">Crear una nota</h2>
+
+            <form id="formulario-nota">
+                <div class="campo">
+                    <label for="titulo">Título de la nota</label>
+                    <input type="text" id="titulo" name="titulo"
+                           maxlength="80" placeholder="Ej. Tareas de hoy"
+                           required>
+                </div>
+
+                <div class="campo">
+                    <label for="contenido">Contenido</label>
+                    <textarea id="contenido" name="contenido" rows="4"
+                              maxlength="500"
+                              placeholder="Escribe tu nota aquí..."
+                              required></textarea>
+                </div>
+
+                <button type="submit" id="boton-agregar" disabled>
+                    Agregar nota
+                </button>
+                <p id="ayuda-formulario" class="ayuda">
+                    Completa el título y el contenido para agregar una nota.
+                </p>
+            </form>
+        </section>
+
+        <section class="seccion-notas" aria-labelledby="titulo-notas">
+            <div class="titulo-lista">
+                <h2 id="titulo-notas">Mis notas guardadas</h2>
+                <span id="contador" class="contador">0 notas</span>
+            </div>
+
+            <p id="mensaje" class="mensaje" role="status"
+               aria-live="polite"></p>
+
+            <div id="lista-notas" class="lista-notas">
+                <p id="estado-vacio" class="vacio">
+                    Todavía no tienes notas. ¡Agrega tu primera idea!
+                </p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

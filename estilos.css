@@ -1,0 +1,224 @@
+:root {
+    --color-fondo: #f3f6fb;
+    --color-superficie: #ffffff;
+    --color-texto: #172b4d;
+    --color-secundario: #465670;
+    --color-principal: #174ea6;
+    --color-principal-hover: #103b80;
+    --color-borde: #8796aa;
+    --color-exito: #176b38;
+    --color-error: #b42318;
+    --color-peligro: #a61b1b;
+    --espacio: 16px;
+    --radio: 12px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 32px 16px;
+    font-family: Arial, sans-serif;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.5;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.encabezado {
+    margin-bottom: 24px;
+}
+
+.etiqueta {
+    margin: 0;
+    color: var(--color-principal);
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+h1 {
+    margin: 6px 0;
+    font-size: 2.2rem;
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 1.25rem;
+}
+
+.descripcion,
+.ayuda {
+    color: var(--color-secundario);
+}
+
+.panel,
+.nota {
+    background: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    padding: 24px;
+}
+
+.panel {
+    margin-bottom: 32px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: var(--espacio);
+}
+
+label {
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    color: var(--color-texto);
+    background: #ffffff;
+    font: inherit;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    min-height: 44px;
+    padding: 10px 16px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#boton-agregar {
+    width: 100%;
+    background: var(--color-principal);
+    color: #ffffff;
+}
+
+#boton-agregar:hover:not(:disabled) {
+    background: var(--color-principal-hover);
+}
+
+button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #e09b00;
+    outline-offset: 3px;
+}
+
+.ayuda {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+
+.titulo-lista {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--espacio);
+    flex-wrap: wrap;
+}
+
+.contador {
+    color: var(--color-secundario);
+    font-size: 0.9rem;
+}
+
+.mensaje {
+    min-height: 24px;
+    font-weight: bold;
+}
+
+.mensaje.exito {
+    color: var(--color-exito);
+}
+
+.mensaje.error {
+    color: var(--color-error);
+}
+
+.lista-notas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    gap: var(--espacio);
+}
+
+.nota h3 {
+    margin-top: 0;
+    overflow-wrap: anywhere;
+}
+
+.nota p {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.nota .fecha {
+    color: var(--color-secundario);
+    font-size: 0.85rem;
+}
+
+.acciones-nota {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: var(--espacio);
+}
+
+.boton-eliminar {
+    background: #ffffff;
+    border: 2px solid var(--color-peligro);
+    color: var(--color-peligro);
+}
+
+.boton-cancelar {
+    background: #ffffff;
+    border: 2px solid var(--color-borde);
+    color: var(--color-texto);
+}
+
+.boton-eliminar:hover {
+    background: #fff0f0;
+}
+
+.vacio {
+    color: var(--color-secundario);
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    .panel,
+    .nota {
+        padding: 16px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+}
